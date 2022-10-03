@@ -49,6 +49,8 @@ x_min frame 10: 7,39 m -> TTC frame 9-10 : 18,475 s
 
 x_min frame 11: 7,20 m -> outliers in front of other points!! -> TTC frame 10-11 : 3,789 s
 
+<img src="images/TTC_Lidar_outlier_1.png" />
+
 x_min frame 12: 7,27 m -> TTC frame 11-12 : - 10,385 s (which means the car in front is getting away)  
 
 x_min frame 13: 7,19 m - > TTC frame 12-13 : 8,9875 s 
@@ -58,10 +60,15 @@ x_min frame 14: 7,13 m -> TTC frame 13-14 : 11,883 s
 x_min frame 15: 7,04 m -> TTC frame 14-15 : 7,822 s
 
 x_min frame 16: 6,83 m -> outliers in front of other points!! -> TTC frame 15-16 : 3,252 s
+<img src="images/TTC_Lidar_outlier_2.png" />
 
 x_min frame 17: 6,90 m -> TTC frame 18-17 : - 9,857 s (which means the car in front is getting away)
 
 x_min frame 18: 6,81 m ->TTC frame 17-18 : 7,567 s
+
+### Observations
+
+Some outliers can cause a poor computation of the Lidar based TTC.
 
 <img src="images/TTC_per_frame.png" />
 
