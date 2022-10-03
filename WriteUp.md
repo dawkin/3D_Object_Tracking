@@ -2,11 +2,19 @@
 
 ## FP 1
 
+Implementation is at line 263 in camFusion_Student.cpp file.
+
 ## FP 2
+
+Lidar based TTC is implemented at line 229 in camFusion_Student.cpp file.
 
 ## FP 3
 
+Implementation is at line 139 in camFusion_Student.cpp file.
+
 ## FP 4
+
+Camera based TTC is implemented at line 178 in camFusion_Student.cpp file.
 
 ## FP 5
 
@@ -64,10 +72,23 @@ From the previous graph some insights can be extracted:
 3) with a lower frame rate for Lidar based TTC noise could be reduced
 
 ## FP 6: 
-The camera based TTC can be off when the median distance between keypoints matches get close or equal to 1. It can happen when both cars are keeping the exact same distance or when both cars stopped.
+The camera based TTC can be off when the median distance between keypoints matches get close or equal to 1. It can happen when both cars are keeping the exact same distance or when both cars stopped. Also in some cases the keypoint detector/descriptor does not provide enough keypoints match inside the bounding box wich prevent from TTC computation and gives us a "nan" result.
+
+<img src="images/TTC_camera_nan.png" />
 
 <img src="images/TTC_camera_inf.png" />
 
 Harris detector is not represented and is out of the competition for the best TTC Camera model because of the low number of keypoints on the car.
+
+All the results of the camera TTC can be found inside the CSV file ("ttc_per_combinations.csv") in the root directory.
+
+It is clear from the result that the quality of the TTC is dependent on the quality of the keypoints detector more than from the descriptor.
+
+If only this project is taken into account the best combinations are:
+
+1) SIFT-SIFT
+2) SIFT-BRISK
+3) SIFT-BRIEF
+
 
 
