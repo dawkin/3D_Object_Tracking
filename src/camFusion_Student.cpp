@@ -150,16 +150,8 @@ void clusterKptMatchesWithROI(BoundingBox &boundingBox, std::vector<cv::KeyPoint
             // add match to bounding box matches vector
             bb_matches.push_back(match);
 
-            // compute distance of the match
-            // get keypoints coordiantes 
-            double prev_x = kptsPrev[match.queryIdx].pt.x;
-            double prev_y = kptsPrev[match.queryIdx].pt.y;
-
-            double curr_x = kptsCurr[match.trainIdx].pt.x;
-            double curr_y = kptsCurr[match.trainIdx].pt.y;
-
             // add distance to bounding box match distances
-            match_distance.push_back(sqrt((prev_x - curr_x) * (prev_x - curr_x) + (prev_y - curr_y) * (prev_y - curr_y)));
+            match_distance.push_back(cv::norm(kptsCurr[match.trainIdx].pt - kptsPrev[match.queryIdx].pt));
         }
     }
     // Use of median as a robust mean estimation tool
